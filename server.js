@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.listen(8080, () => console.log(`Started server at http://localhost:8080!`));
 
+//people
 app.route('/').get((req, res) => {
 	let peopleJson = fs.readFileSync('./data/people.json');
 	try {
@@ -31,6 +32,7 @@ app.route('/').get((req, res) => {
 	}
 });
 
+//expenses
 app.route('/get-expense').post((req, res) => {
 	try {
 		if (!req.body) {
